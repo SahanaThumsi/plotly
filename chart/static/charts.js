@@ -69,6 +69,8 @@ function buildCharts(sample) {
     var otu_ids = results.otu_ids;
     var otu_labels = results.otu_labels.slice(0, 10).reverse();
     var sample_values = results.sample_values.slice(0, 10).reverse();
+    var otulabels = results.otu_labels;
+    var samplevalues = results.sample_values;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -98,12 +100,12 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
       x: otu_ids,
-      y: sample_values,
-      text: otu_labels,
+      y: samplevalues,
+      text: otulabels,
       mode: "markers",
       marker:{
-        size: sample_values,
-        color: sample_values,
+        size: samplevalues,
+        color: otu_ids,
         colorscale: "Earth"
         
 
